@@ -1,28 +1,27 @@
+import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-category',
   standalone: true,
-  imports: [FormsModule],
+  imports: [NgIf, NgFor, NgClass, NgStyle],
   templateUrl: './category.component.html',
   styleUrl: './category.component.css'
 })
 export class CategoryComponent {
 
-  public stringInterpolation = "Olá, mundo!";
+  public items = [
+    {description: 'Gabriel', id: 1},
+    {description: 'Isabella', id: 2},
+    {description: 'Rafael', id: 3},
+    {description: 'Davi', id: 4},
+  ];
 
-  public isDisabled = false;
+  public showTitle = true;
 
-  public myBindingProperty: string = '';
-
-  public processClick(input: string) {
-    alert(`This button was clicked!  ${input}`);
+  public changeTitleDisplayStatus() {
+    if (this.showTitle) this.showTitle = false;
+    else this.showTitle = true;
   }
-
-  public disableButton(){
-    if(this.isDisabled) this.isDisabled = false;
-    else this.isDisabled = true;
-  }
-
 }
