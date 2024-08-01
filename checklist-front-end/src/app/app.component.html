@@ -1,4 +1,31 @@
-<app-header></app-header>
-<h2>{{title}}</h2>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<div class="main-container">
+
+  <app-header [sidenav]="sidenav"></app-header>
+
+  <mat-sidenav-container>
+
+    <mat-sidenav #sidenav class="w-10p">
+
+      <mat-list>
+        <mat-list-item (click)="sidenav.toggle()">
+          <a href="/" class="menu-item">
+            <mat-icon>home</mat-icon>
+            <span class="ml-15">Home</span>
+          </a>
+        </mat-list-item>
+      </mat-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content ngSkipHydration>
+
+      <h2>Isso é uma aplicação de teste</h2>
+      <router-outlet></router-outlet>
+
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+  <app-footer></app-footer>
+
+</div>
