@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     CommonModule,
     MatListModule,
-    MatIconModule
+    MatIconModule, RouterModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

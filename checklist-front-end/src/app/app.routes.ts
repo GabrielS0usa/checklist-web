@@ -5,6 +5,6 @@ import { CategoryComponent } from './category/category.component';
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'category', component: CategoryComponent},
   {path: '**', component: PageNotFoundComponent},
-  {path: 'category', component: CategoryComponent}
 ];

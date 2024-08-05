@@ -9,7 +9,7 @@
 }
 
 a{
-  color: black;
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
@@ -29,13 +29,15 @@ a:hover{
   margin-left: 15px;
 }
 
-.menu-item{
+.menu-item {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: inherit;
 }
 
-
+.mat-icon {
+  color: white;  /* Ajuste a cor dos ícones para branco */
+}
 
 

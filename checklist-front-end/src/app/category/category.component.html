@@ -1,1 +1,63 @@
-<p>category works!</p>
+
+<div>
+
+    <mat-card class="m-20">
+
+      <mat-card-header>
+        <mat-card-title>Gerenciar categorias</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <mat-form-field>
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+        </mat-form-field>
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let element">
+
+              <button mat-stroked-button class="mr-10" (click)="editCategory(element)">Edit</button>
+              <button mat-stroked-button class="mr-10" (click)="deletCategory(element)">Delet</button>
+
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          <!-- Row shown when there is no matching data. -->
+          <!-- <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr> -->
+        </table>
+
+
+      </mat-card-content>
+
+      <mat-card-actions>
+
+        <a mat-flat-button class="mr-10" [routerLink]="['/']">Home</a>
+        <a mat-fab extended (click)="createNewCategory()">Create New Category</a>
+
+      </mat-card-actions>
+
+    </mat-card>
+
+</div>
